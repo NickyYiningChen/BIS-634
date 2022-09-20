@@ -123,4 +123,34 @@ data.plot.scatter(x = 'age', y = 'weight')
 ```
 Below is the scatterplot
 ![](scatterplot.png)
->>
+>Describe the general relationship between the two variables
+
+In this dataset, weight is increasing linearly as age increases when the age interval is (0,20). In general, the weight of people reaches a peak when people are at the age of 20. After the age of 20, as the age of people increase, the weight of people stays amost the same which appears a line with slope 0 in the scattered plot.
+
+>You should notice at least one outlier that does not follow the general relationship. What is the name of the person?
+
+In the scatterplot, we could notice that there is an individual lying as an extreme outlier with age slightly greater than 40 while weight less than 30.
+So in the code, I set (weight<30 && age>40) as the critiria to locate the outlier
+```python
+print(np.where((data['age'] > 40) & (data['weight'] < 30)))
+```
+The output of the above code is:
+```
+(array([537]),)
+```
+
+> What is the name of the person? 
+
+So now we successfully locate the row number of the outlier. I used the following code to print all the relative information of this person.
+```python
+data.iloc[537]
+```
+The output of above code is: (the name of this person is Anthony Freeman)
+```
+name        Anthony Freeman
+age                    41.3
+weight                 21.7
+eyecolor              green
+Name: 537, dtype: object
+```
+
