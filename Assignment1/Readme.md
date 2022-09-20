@@ -77,8 +77,16 @@ data.age.max()
 
 >Plot a histogram of the distribution with an appropriate number of bins for the size of the dataset
 
+In my code, I used the Sturges' Rule to calculate the appropriate number of bins:
+
+    bins = ceil(1+log2N) = ceil(18.21713) = 19 
+
+
 ```python
-data.hist(column = 'age', bins = 18)
+data.hist(column = 'age', bins = 19)
 ```
 Below is the histogram with age 
 ![](agehist.png)
+>Comment on any outliers or patterns you notice in the distribution of ages
+
+The histogram with age as the column is skewed to the right. The number of people drop sharply when the age comes to 60.
