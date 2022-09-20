@@ -113,4 +113,14 @@ data.plot.hist(column = 'weight', bins = 19)
 ```
 Below is the histogram with age 
 ![](weighthist.png)
+>Comment on any outliers or patterns you notice in the distribution of weights
 
+The graph is slightly skewed to the left. The number of people increase sharply and reaches a peak when the weight comes to 60 
+
+>Make a scatterplot of the weights vs the ages
+```python
+data.plot.scatter(x = 'age', y = 'weight')
+```
+Below is the scatterplot
+![](scatterplot.png)
+>>
