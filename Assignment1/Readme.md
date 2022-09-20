@@ -90,3 +90,27 @@ Below is the histogram with age
 >Comment on any outliers or patterns you notice in the distribution of ages
 
 The histogram with age as the column is skewed to the right. The number of people drop sharply when the age comes to 60.
+
+> Examine the distribution of the weight in the dataset
+
+Mean = 60.88413415993031
+
+Standard Deviation = 18.411824265661494
+
+Min = 3.3820836824389326
+
+Max = 100.43579300336947
+
+```python
+data.weight.mean()
+data.weight.std()
+data.weight.min()
+data.weight.max()
+```
+>Plot a histogram of the distribution 
+```python
+data.plot.hist(column = 'weight', bins = 19)
+```
+Below is the histogram with age 
+![](weighthist.png)
+
