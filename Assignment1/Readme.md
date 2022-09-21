@@ -244,7 +244,19 @@ peak_diff('Texas', 'Oklahoma')
 peak_diff('Connecticut', 'California')
 peak_diff('Alabama', 'Texas')
 ```
-Here are the outputs of the test above: 
+Here are the outputs of the tests: 
 ```
+('Oklahoma', 14)
+('These two states reaches the peak at the same date',
+ Timestamp('2022-01-10 00:00:00'),
+ 0)
+ ('Alabama', 26)
+```
+From the output above we can conclude: 
 
-```
+When comparing Texas and Oklahoma, Oklahoma reaches its daily new cases peak first. There are 14 days separate that one's peak from the other one's peak.
+
+When comparing Connecticut and California, these two states reach its daily new cases peak at the same date, which is 2022-1-10. There are 0 days separate that one's peak from the other one's peak.
+
+When comparing Alabama and Texas, Alabama reaches its daily new cases peak first. There are 26 days separate that one's peak from the other one's peak.
+
