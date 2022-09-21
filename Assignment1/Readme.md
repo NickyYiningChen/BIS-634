@@ -153,4 +153,45 @@ weight                 21.7
 eyecolor              green
 Name: 537, dtype: object
 ```
+## Problem 3
 
+About this dataset: I downloaded the data on Sep.20th, 2022. I'm referencing the covid cases data from New York Times and here's the url of the data https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-states.csv.
+
+```python
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+data = pd.read_csv("us-states.csv")
+# to get a general overview of the dataset
+data.head(10)
+```
+I first changed the data type of date from string to date so I could use numpy package and do arithmetic equation with them.
+```python
+# first transfer the data type from strings to datetime 
+data['date'] = pd.to_datetime(data['date'])
+```
+>Make a function that takes a list of state names and plots their new cases vs date using overlaid line graphs, one for each selected state
+
+Below is the body of function plot and the tests using two lists of data: ['Oklahoma', 'Texas'] and ['Wisconsin','Washington']
+```python
+def plot(lst):
+    # set the figure size for better visualization
+    plt.figure(figsize=(10, 5))
+    for state in lst:
+        data1 = data[data['state']==state]
+        data1['cases'] = data1['cases'].diff()
+        plt.plot(data1['date'], data1['cases'], label=state)
+    plt.legend()
+    plt.title('daily cases')
+    plt.xlabel('date')
+    plt.ylabel('cases')
+    plt.show()
+    
+# Example to test plot function
+lst = ['Oklahoma', 'Texas']
+plot(lst)
+lst2 = ['Wisconsin','Washington']
+plot(lst2)
+```
+The graph of plots are shown below:
+![]
