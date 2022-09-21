@@ -172,6 +172,8 @@ data['date'] = pd.to_datetime(data['date'])
 ```
 >Make a function that takes a list of state names and plots their new cases vs date using overlaid line graphs, one for each selected state
 
+>Test the above function and provide examples of it in use
+
 Below is the body of function plot and the tests using two lists of data: ['Oklahoma', 'Texas'] and ['Wisconsin','Washington']
 ```python
 def plot(lst):
@@ -193,5 +195,56 @@ plot(lst)
 lst2 = ['Wisconsin','Washington']
 plot(lst2)
 ```
-The graph of plots are shown below:
-![]
+The graph of plots are shown below:(no specific limitations)
+![](oktx.png)
+![](wswa.png)
+>Make a function that takes the name of a state and returns the date of its highest number of new cases.
+
+Below is the body of the function highest_date with several tests:
+```python
+def highest_date(state):    
+    data1 = data[data['state']==state]
+    data1['cases'] = data1['cases'].diff()
+    date = data1[data1['cases'] == np.max(data1['cases'])]['date']
+    return date
+
+highest_date('Alabama')
+highest_date('Illinois')
+highest_date('Virginia')
+```
+Here are the outputs of the test above: From the out put, we can conclude that the date of daily new case peak for Alabama is 2022-01-29, Illinois is 2022-01-18, Virginia is 2022-01-10
+```
+38478   2022-01-29
+37877   2022-01-18
+37465   2022-01-10
+```
+> Make a function that takes the names of two states and reports which one had its highest number of daily new cases first and how many days separate that one's peak from the other one's peak. 
+
+Below are the body of the function peak_diff with several tests: 
+```python
+def peak_diff(state1, state2):
+    data1 = data[data['state']==state1]
+    data2 = data[data['state']==state2]
+    
+    data1['cases'] = data1['cases'].diff()
+    data2['cases'] = data2['cases'].diff()
+    
+    date1 = np.min(data1[data1['cases'] == np.max(data1['cases'])]['date'])
+    date2 = np.min(data2[data2['cases'] == np.max(data2['cases'])]['date'])
+    
+    if date1 > date2:
+        return state1, (date1 - date2).days
+    # when two states reach their new cases peak at the same date
+    elif date1 == date2:
+        return "These two states reaches the peak at the same date",date1, 0
+    else:
+        return state2, (date2 - date1).days
+
+peak_diff('Texas', 'Oklahoma')
+peak_diff('Connecticut', 'California')
+peak_diff('Alabama', 'Texas')
+```
+Here are the outputs of the test above: 
+```
+
+```
