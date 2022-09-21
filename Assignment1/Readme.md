@@ -260,3 +260,74 @@ When comparing Connecticut and California, these two states reach its daily new 
 
 When comparing Alabama and Texas, Alabama reaches its daily new cases peak first. There are 26 days separate that one's peak from the other one's peak.
 
+## Problem 4
+
+For this excercise, I used element tree and Xpath to solve the problem.
+```python
+import xml.etree.ElementTree as ET
+tree_ = ET.parse('desc2022.xml')
+root = tree_.getroot()
+root.tag
+root.attrib
+```
+Below are the functions 
+```python
+def getNodeByDescriptorUI(tree, targetDescriptorUI):
+    for node in tree.findall('.//DescriptorRecord'):
+        descriptorUI = node.find('./DescriptorUI').text
+        if descriptorUI == targetDescriptorUI:
+            return node
+
+    return None
+    
+def getDescriptorName(tree, targetDescriptorUI):
+    node = getNodeByDescriptorUI(tree, targetDescriptorUI)
+    if node is None:
+        return None
+
+    return node.find('./DescriptorName/String').text
+    
+def getNodeByDescriptorName(tree, targetDescriptorName):
+    for node in tree.findall('.//DescriptorRecord'):
+        descriptorName = node.find('./DescriptorName/String').text
+        if descriptorName == targetDescriptorName:
+            return node
+
+    return None
+    
+def getDescriptorUI(tree, targetDescriptorName):
+    node = getNodeByDescriptorName(tree, targetDescriptorName)
+    if node is None:
+        return None
+
+    return node.find('./DescriptorUI').text
+
+def getSubNodes(tree, node):
+    nodeNameSet = set()
+    for treeNumberNode in node.findall('.//TreeNumberList/TreeNumber'):
+        nodeNameSet.add(treeNumberNode.text)
+
+    subNodes = set()
+    for otherNode in tree.findall('.//DescriptorRecord'):
+        for otherTreeNumberNode in otherNode.findall('.//TreeNumberList/TreeNumber'):
+            otherTreeNumberText = otherTreeNumberNode.text
+            for nodeName in nodeNameSet:
+                if otherTreeNumberText.startswith(nodeName):
+                    subNodes.add(otherNode.find('./DescriptorName/String').text)
+
+    return subNodes
+
+def getTreeNumberByDescriptorName(tree, targetDescriptorName, targetDescriptorUI):
+    node1 = getNodeByDescriptorName(tree, targetDescriptorName)
+    node2 = getNodeByDescriptorUI(tree, targetDescriptorUI)
+
+    subNodeSet1 = getSubNodes(tree, node1)
+    subNodeSet2 = getSubNodes(tree, node2)
+
+    bothSet = set()
+    for subNode1 in subNodeSet1:
+        if subNode1 in subNodeSet2:
+            bothSet.add(subNode1)
+
+    return list(bothSet)
+```
