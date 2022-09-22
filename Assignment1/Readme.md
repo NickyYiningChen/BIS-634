@@ -331,3 +331,68 @@ def getTreeNumberByDescriptorName(tree, targetDescriptorName, targetDescriptorUI
 
     return list(bothSet)
 ```
+> The DescriptorName associated with DescriptorUI D007154
+```python
+targetDescriptorUI_ = 'D007154'
+descriptorName_ = getDescriptorName(tree_, targetDescriptorUI_)
+print(f'Q1: descriptorName of {targetDescriptorUI_} is {descriptorName_}')
+```
+Below is the output of the tests. From the output, we can conclude that the DescriptorName associated with DescriptorUI D007154 is Immune System Diseases
+```
+Q1: descriptorName of D007154 is Immune System Diseases
+```
+> The DescriptorUI (MeSH Unique ID) associated with DescriptorName "Nervous System Diseases"
+```python
+targetDescriptorName_ = 'Nervous System Diseases'
+descriptorUI_ = getDescriptorUI(tree_, targetDescriptorName_)
+print(f'Q2: descriptorUI of {targetDescriptorName_} is {descriptorUI_}')
+```
+Below is the output of the tests. From the output, we can conclude that the DescriptorUI associated with DescriptorName "Nervous System Disease"is D009422
+```
+Q2: descriptorUI of Nervous System Diseases is D009422
+```
+> the DescriptorNames of items in the MeSH hierarchy that are descendants of both "Nervous System Diseases" and D007154. (That is, each item is a subtype of both, as defined by its TreeNumber(s).)
+```python
+bothSet_ = getTreeNumberByDescriptorName(tree_, targetDescriptorName_, targetDescriptorUI_)
+print('Q3: ')
+print('\n'.join(bothSet_))
+```
+Below is the output of the tests. 
+```
+Q3: 
+Autoimmune Hypophysitis
+Myasthenia Gravis, Autoimmune, Experimental
+Polyradiculoneuropathy
+POEMS Syndrome
+Autoimmune Diseases of the Nervous System
+Multiple Sclerosis, Chronic Progressive
+Myasthenia Gravis
+Lupus Vasculitis, Central Nervous System
+Giant Cell Arteritis
+Ataxia Telangiectasia
+Mevalonate Kinase Deficiency
+Kernicterus
+Nervous System Autoimmune Disease, Experimental
+Uveomeningoencephalitic Syndrome
+Microscopic Polyangiitis
+Diffuse Cerebral Sclerosis of Schilder
+Multiple Sclerosis, Relapsing-Remitting
+Encephalomyelitis, Autoimmune, Experimental
+Myelitis, Transverse
+Demyelinating Autoimmune Diseases, CNS
+Vasculitis, Central Nervous System
+Lambert-Eaton Myasthenic Syndrome
+Myasthenia Gravis, Neonatal
+Anti-N-Methyl-D-Aspartate Receptor Encephalitis
+Neuromyelitis Optica
+Multiple Sclerosis
+Neuritis, Autoimmune, Experimental
+AIDS Arteritis, Central Nervous System
+Guillain-Barre Syndrome
+Polyradiculoneuropathy, Chronic Inflammatory Demyelinating
+Miller Fisher Syndrome
+Encephalomyelitis, Acute Disseminated
+Stiff-Person Syndrome
+Leukoencephalitis, Acute Hemorrhagic
+AIDS Dementia Complex
+```
