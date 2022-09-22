@@ -357,7 +357,7 @@ bothSet_ = getTreeNumberByDescriptorName(tree_, targetDescriptorName_, targetDes
 print('Q3: ')
 print('\n'.join(bothSet_))
 ```
-Below is the output of the tests. 
+Below is the output of the tests. The outputs are all the diseases and subtype diseases that counted in both "Nervous System Diseases" and "Immune System Diseases"
 ```
 Q3: 
 Autoimmune Hypophysitis
@@ -396,3 +396,8 @@ Stiff-Person Syndrome
 Leukoencephalitis, Acute Hemorrhagic
 AIDS Dementia Complex
 ```
+> Explain briefly in terms of biology/medicine what the above search has found.
+
+From MeSH Browser, we can easily find D007154("Immune System Diseases") has the tree number of C20, "Nervous System Diseases" has the tree number of C10. 
+
+So the biogoly meaning of the above function and tests is to find out all the various types of diseases that is categorized in both "Immune System Disease" and "Nervous System Diseases"
