@@ -303,25 +303,25 @@ For k = 5, the plots are shown below:
 
 ![](k5_1.png)
 
-![k5_2.png]
+![](k5_2.png)
 
-![k5_3.png]
+![](k5_3.png)
 
 For k = 7, the plots are shown below:
 
-![k7_1.png](attachment:k7_1.png)
+![](k7_1.png)
 
-![k7_2.png](attachment:k7_2.png)
+![](k7_2.png)
 
-![k7_3.png](attachment:k7_3.png)
+![](k7_3.png)
 
 For k = 15, the plots are shown below:
 
-![k15_1.png](attachment:k15_1.png)
+![](k15_1.png)
 
-![k15_3.png](attachment:k15_3.png)
+![](k15_2.png)
 
-![k15_2.png](attachment:k15_2.png)
+![](k15_3.png)
 
 #### Run it several times to get a sense of the variation of clusters for each k (share your plots); comment briefly on the diversity of results for each k. 
 
