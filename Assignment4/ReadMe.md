@@ -301,11 +301,11 @@ I then tested the function with k = 5,7,15. I tested each k value three times to
 
 For k = 5, the plots are shown below:
 
-![k5_1.png](attachment:k5_1.png)
+![k5_1.png]
 
-![k5_2.png](attachment:k5_2.png)
+![k5_2.png]
 
-![k5_3.png](attachment:k5_3.png)
+![k5_3.png]
 
 For k = 7, the plots are shown below:
 
