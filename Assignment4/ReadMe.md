@@ -73,7 +73,7 @@ print("f =", request(a, b))
 
 
 I first tried several tests. From the above tests, we can see that when a = 0.4 and b = 0.2, the minimum error point is when a = 0.7119491700005472 b = 0.16895009000019706, and f = 1.00000001522. When a = 0.1 and b =0.1, the minimum error point is when a = 0.21594915000068263 b = 0.6889456899994538, and f = 1.10000000554 \
-It indicates the algorithm would generate at least two minimas. So I generate a 5$*$5 matrix with different a values and b values to see if there's any other minimas. 
+It indicates the algorithm would generate at least two minimas. So I generate a 5*5 matrix with different a values and b values to see if there's any other minimas. 
 
 
 ```python
