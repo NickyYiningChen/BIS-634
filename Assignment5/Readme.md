@@ -311,6 +311,8 @@ Output:
 
 The data I want to use is the fetal health data on Kaggle. Everyone is able to access and download it from this link: https://www.kaggle.com/datasets/andrewmvd/fetal-health-classification
 
+I include the orginal data file as "fetal_health.csv" and the cleaned data file as "cleaned_fetal_health.csv"
+
 As for the original dataset, there are 22 variables:
 
 -baseline value: The baseline fetal heart rate
