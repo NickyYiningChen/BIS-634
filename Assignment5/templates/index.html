@@ -1,0 +1,31 @@
+
+<html>
+    
+    <head>
+        <meta charset="UTF-8">
+        <title>index</title>
+        <script src="{{ url_for('static', filename='js/usage.js')}}"></script>
+    </head>
+    <body>
+        <center>
+        <h1>
+            US Cancer Age-adjusted Incidence Rate 
+        </h1>
+        
+        Hello everybody. <br><br>
+        
+
+        To get the mean and standard deviation of age-adjusted incidence rate, type in the url: http://127.0.0.1:5000/moreinfo <br> 
+        Another method to get the age-adjusted incidence rate is to type in the url with state name. Example: http://127.0.0.1:5000/State/Oklahoma <br><br><br>
+        <b>Input a State to get its age-adjusted incidence rate: (Capitalize the first letter)<b><br><br>
+        </center>
+        <form action="/info" method="GET">
+            <textarea style="width:100%; height: 5em" name="usertext"></textarea>
+            <br>
+            <br>
+            <center>
+            <input type="submit" value="Submit">
+            </center>
+        </form>
+    </body>
+</html>
