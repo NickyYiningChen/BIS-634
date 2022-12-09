@@ -24,7 +24,7 @@ def analyze():
         i = state_list.index(usertext)
         rate = str(rate_list[i])
     else:
-        rate = "Please input a valid State name!"
+        rate = "This is NOT a valid state name. Please input a valid State name!"
     return render_template("analyze.html", output = rate, usertext=usertext)
 
 @app.route("/state/<string:name>")
@@ -36,7 +36,7 @@ def state(name):
     
 @app.route("/moreinfo")
 def mean_std():
-    info = "In the United States, the average of age-adjusted incidence rate is: <b>" + str(rate_average) + "</b>, and the standard deviation is: <b>" + str(rate_std) + "</b>"
+    info = "<center> In the United States, the average of age-adjusted incidence rate is: <b> <br>" + str(rate_average) + "</b> <br>The standard deviation is: <b><br>" + str(rate_std) + "</b> </center>"
     return info
 
 if __name__ == "__main__":
