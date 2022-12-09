@@ -350,7 +350,7 @@ Graphs that i want to make contains a figure of several descriptive analysis . T
 
 **Describe how you want your website to work.**
 
-I'm going to use flask to build the server. And i'm going to make css/js files to make the webpage looks prettier.
+I'm going to use flask to build the server. And I'm going to make css/js files to make the webpage looks prettier. I'm going to provide a main page which shows the basic descriptive analysis and figures of the data set. Also i will show the logistic regression and pca on the same page. Another page of my website is about knn analysis, where the user can input a parameter k to change the value of n. The last page I want to include my random forrest analysis. 
 
 **What do you see as your biggest challenge to completing this, and how do you expect to overcome this challenge?**   
 
