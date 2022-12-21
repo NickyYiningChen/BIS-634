@@ -1,0 +1,209 @@
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>BIS634 Final Project by Yining Chen</title>
+    </head>  
+    <style>
+        body{background: url(../static/pics/bg.gif);background-size:contain;}
+    </style>   
+    <body>
+        <h1 style="text-align:center">
+            BIS 634 Final Project: Diabetes Prediction</h1>
+        <hr>
+        <center>
+        <h2>About Dataset</h2> 
+        
+        <p>
+            This dataset is originally from the National Institute of Diabetes and Digestive and Kidney
+Diseases. 
+        </p>
+        <p>
+            The objective of the dataset is to diagnostically predict whether a patient has diabetes,
+based on certain diagnostic measurements included in the dataset.
+        </p>
+        <a href="https://www.kaggle.com/datasets/whenamancodes/predict-diabities">
+            Click to check the original dataset from Kaggle
+        </a>
+       
+        <h2>Target Demographic Group</h2>
+        <p>
+            In particular, all patients here are females at least 21 years old of Pima Indian heritage.
+        </p>
+        </center>
+        <br>
+        <center>
+        <h2>
+            Variables Table
+        </h2>
+        <table border="collapse">
+            <tr>
+                <th>Variable name</th>
+                <th>Descriptions</th>
+                <th>Mean</th>
+                <th>Standard Deviation</th>
+            </tr>
+            <tr>
+                <td>Pregnancies</td>
+                <td>To express the Number of pregnancies</td>
+                <td>3.84</td>
+                <td>3.37</td>
+            </tr>
+            <tr>
+                <td>Glucose</td>
+                <td>To express the Glucose level in blood</td>
+                <td>120.89</td>
+                <td>31.97</td>
+            </tr>
+            <tr>
+                <td>BloodPressure</td>
+                <td>To express the Blood pressure measurement</td>
+                <td>69.11</td>
+                <td>19.36</td>
+            </tr>
+            <tr>
+                <td>Skin Thickness</td>
+                <td>To express the thickness of the skin</td>
+                <td>20.54</td>
+                <td>15.95</td>
+            </tr>
+            <tr>
+                <td>Insulin</td>
+                <td>To express the Insulin level in blood</td>
+                <td>79.80</td>
+                <td>115.24</td>                
+            </tr>
+            <tr>
+                <td>BMI</td>
+                <td>To express the Body mass index</td>
+                <td>31.99</td>
+                <td>7.88</td>                
+            </tr>
+            <tr>
+                <td>Diabetes Pedigree Function</td>
+                <td>To express the Diabetes percentage</td>
+                <td>0.47</td>
+                <td>0.33</td>                
+            </tr>                                                
+            <tr>
+                <td>Age</td>
+                <td>To express the age</td>
+                <td>33.24</td>
+                <td>11.76</td>                
+            </tr> 
+            <tr>
+                <td>Outcome</td>
+                <td>To express the final result 1 is Yes and 0 is No</td>
+                <td>0.35</td>
+                <td>-</td>                
+            </tr> 
+        </table>
+        <br>
+        <h2>Data Exploration and Visualization</h2>  
+        <h3>
+            1. Distribution of each variables using histograms
+        </h3>
+        
+        <p>
+            <img src="static/pics/preg.png" alt="Pregnancies" width="500" height="330">
+            <img src="static/pics/glu.png" alt="Glucose" width="500" height="330">
+            <img src="static/pics/bp.png" alt="BloodPressure" width="500" height="330">
+            <img src="static/pics/st.png" alt="Skin Thickness" width="500" height="330">
+            <img src="static/pics/insulin.png" alt="Insulin" width="500" height="330">
+            <img src="static/pics/bmi.png" alt="BMI" width="500" height="330">
+            <img src="static/pics/dpf.png" alt="Diabetes Pedigree Function" width="500" height="330">
+            <img src="static/pics/age.png" alt="Age" width="500" height="330">
+        </p>
+
+        <h3>
+            2. Explore the correlation between Diabetes outcome and each risk factors
+        </h3>
+        <h4>
+            Heatmap
+        </h4>
+        <p>
+            <img src="static/pics/heatmap.png" alt="Heatmap" width="700" height="500">
+        </p>
+        <h4>
+            Correlation Table
+        </h4>
+        <table border="collapse">
+            <tr>
+                <th>Variable name</th>
+                <th>Correlation</th>
+            </tr>
+            <tr>
+                <td>Outcome</td>
+                <td>1.000</td>
+            </tr>
+            <tr>
+                <td>Glucose</td>
+                <td>0.467</td>
+            </tr>
+            <tr>
+                <td>BMI</td>
+                <td>0.293</td>
+            </tr>
+            <tr>
+                <td>Age</td>
+                <td>0.238</td>
+            </tr>
+            <tr>
+                <td>Pregnancies</td>
+                <td>0.222</td>                
+            </tr>
+            <tr>
+                <td>Diabetes Predigree Function</td>
+                <td>0.174</td>                
+            </tr>
+            <tr>
+                <td>Insulin</td>
+                <td>0.131</td>                
+            </tr>                                                
+            <tr>
+                <td>Skin Thickness</td>
+                <td>0.075</td>                
+            </tr> 
+            <tr>
+                <td>BloodPressure</td>
+                <td>0.065</td>                
+            </tr> 
+        </table>
+        
+        <h3>We can conclude from the heatmap and the correlation table that the two most significantly correlated risk factors are Glucose and BMI. 
+        </h3>
+        <h3>Let's use countplot to see how Glucose and BMI influence the Diabetes outcome!
+        </h3>
+        <p>
+            <img src="static/pics/glu_count.png" alt="glu_count" width="500" height="330">
+            <img src="static/pics/bmi_count.png" alt="bmi_count" width="500" height="330">
+        </p>
+        <p>
+        <b>
+            As for glucose level, we can see that <i>(40, 130)</i> could be considered as a relatively safe range. <br>
+            When the patient's glucose level exceeds 130, there's a higher risk that this patient has diabetes.<br>
+            When the BMI index of the patient is the the range of <i>(20, 30)</i>, there's a relatively low risk of having diabetes.<br>
+            When the BMI index is in the range of <i>(40, 50)</i>, more than half of patients are diagnosed with diabetes. <br>
+            When the BMI index exceeds 50, the patient is moslt likely having diabetes.
+            <b>
+        <p>
+        <h2>
+            Standardize the data, use PCA to classify the diabetes outcome
+        </h2>
+        <p>
+            <img src="static/pics/pca.png" alt="pca" width="700" height="500"><br><br>
+            We could see that PCA could not give us a proper classification outcome. <br>
+            The reason is that there are relatively small correlation between each varibales (as shown in heatmap).<br>
+            When the correlation is less than 0.3, PCA is not able to generate good dimension reduction outcome. <br>
+            So we are aiming to develop other models (KNN, Logistic Regression, and Random Forrest) to generate our prediction model
+        </p>
+        <a style="font-size:18px" href="http://127.0.0.1:5000/" target="_self">Return Home</a>
+        <br><br><br><br>
+    </center>
+    <hr>
+    <center>
+    <p>&copy; 2022 by Yining Chen</p>
+    </center>
+    </body>
+    
+</html>

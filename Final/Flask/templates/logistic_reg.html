@@ -1,0 +1,194 @@
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Logistic Regression</title>
+    </head>  
+    <style>
+        body{background: url(../static/pics/bg.gif) no-repeat;background-size:cover;}
+    </style>   
+    <body>
+        <h1 style="text-align:center">
+            <br>
+            Diabetes Prediction: Logistic Regression Prediction Model</h1>
+        </h1>
+        <hr>
+        <h2>What is Logistic Regression? </h2>
+        <p style="font-size:20px">
+            Logistic regression is a machine learning algorithm that is used for classification tasks. It is a type of linear model that is used to predict the probability of an outcome occurring, given a set of predictor variables. In classification tasks, the outcome is typically a binary variable, such as whether a patient has a certain disease or not.
+            <br><br>
+            The goal of logistic regression is to find the best coefficients for the predictor variables that will allow the model to accurately predict the probability of the outcome occurring. The model does this by using an iterative process to adjust the coefficients based on the errors made in the previous iteration. The final model is then used to make predictions on new data by using the predictor variables to calculate the probability of the outcome occurring.
+            <br><br>
+            Logistic regression is a widely used machine learning algorithm that is particularly well suited for classification tasks with a binary outcome. I
+        </p>
+       
+        <center>
+            <a href="https://www.geeksforgeeks.org/ml-logistic-regression-using-python/">
+                Click
+            </a> to learn how to implement logistic regression classifier using Python
+            <br><br>
+        <img src="static/pics/log.png" alt="log" width="500" height="330" loop=infinite><br><br>
+        </center>
+        <h2>Logistic Regression Training Data Result:</h2>
+        <center>
+        <h3 style="font-size:22px">Confusion Matrix</h3>
+        <table border= "1" style="font-size:18px">
+            <tr>
+                <th></th>
+                <th>&emsp; &emsp; Normal &emsp; &emsp;</th>
+                <th>&emsp; &emsp; Diabetes &emsp; &emsp;</th>
+            </tr>
+            <tr>
+                <th>&emsp; &emsp; Normal &emsp; &emsp;</th>
+                <th>{{ul_1}}</th>
+                <th>{{ur_1}}</th>
+            </tr> 
+            <tr>
+                <th>Diabetes</th>
+                <th>{{ll_1}}</th>
+                <th>{{lr_1}}</th>
+            </tr> 
+        </table>
+        <h3 style="font-size:22px">Classification Report</h3>
+        <table border="1">
+            
+            <tr>
+                <th></th>
+                <th>&emsp; 0 &emsp;</th>
+                <th>&emsp; 1 &emsp;</th>
+                <th>&emsp; macro avg &emsp;</th>
+                <th>&emsp; micro avg &emsp;</th>
+                <th>&emsp; weighted avg &emsp;</th>
+            </tr>
+            <tr>
+                <th>&emsp; precision &emsp;</th>
+                <th>{{report_train.iloc[0][0]}}</th>
+                <th>{{report_train.iloc[0][1]}}</th>
+                <th>{{report_train.iloc[0][2]}}</th>
+                <th>{{report_train.iloc[0][3]}}</th>
+                <th>{{report_train.iloc[0][4]}}</th>
+            </tr>  
+            <tr>
+                <th>recall</th>
+                <th>{{report_train.iloc[1][0]}}</th>
+                <th>{{report_train.iloc[1][1]}}</th>
+                <th>{{report_train.iloc[1][2]}}</th>
+                <th>{{report_train.iloc[1][3]}}</th>
+                <th>{{report_train.iloc[1][4]}}</th>
+            </tr>   
+            <tr>
+                <th>f1-score</th>
+                <th>{{report_train.iloc[2][0]}}</th>
+                <th>{{report_train.iloc[2][1]}}</th>
+                <th>{{report_train.iloc[2][2]}}</th>
+                <th>{{report_train.iloc[2][3]}}</th>
+                <th>{{report_train.iloc[2][4]}}</th>
+            </tr>   
+            <tr>
+                <th>support</th>
+                <th>{{report_train.iloc[3][0]}}</th>
+                <th>{{report_train.iloc[3][1]}}</th>
+                <th>{{report_train.iloc[3][2]}}</th>
+                <th>{{report_train.iloc[3][3]}}</th>
+                <th>{{report_train.iloc[3][4]}}</th>
+            </tr>                                              
+        </table>
+        </center>
+
+        <h2>Logistic Regression Testing Data Result:</h2>
+        <center>
+        <h3 style="font-size:22px">Confusion Matrix</h3>
+        <table border= "1" style="font-size:18px">
+            <tr>
+                <th></th>
+                <th>&emsp; &emsp; Normal &emsp; &emsp;</th>
+                <th>&emsp; &emsp; Diabetes &emsp; &emsp;</th>
+            </tr>
+            <tr>
+                <th>&emsp; &emsp; Normal &emsp; &emsp;</th>
+                <th>{{ul}}</th>
+                <th>{{ur}}</th>
+            </tr> 
+            <tr>
+                <th>Diabetes</th>
+                <th>{{ll}}</th>
+                <th>{{lr}}</th>
+            </tr> 
+        </table>
+        <h3 style="font-size:22px">Classification Report</h3>
+        <table border="1">
+            <tr>
+                <th></th>
+                <th>&emsp; 0 &emsp;</th>
+                <th>&emsp; 1 &emsp;</th>
+                <th>&emsp; macro avg &emsp;</th>
+                <th>&emsp; micro avg &emsp;</th>
+                <th>&emsp; weighted avg &emsp;</th>
+            </tr>
+            <tr>
+                <th>&emsp; precision &emsp;</th>
+                <th>{{report.iloc[0][0]}}</th>
+                <th>{{report.iloc[0][1]}}</th>
+                <th>{{report.iloc[0][2]}}</th>
+                <th>{{report.iloc[0][3]}}</th>
+                <th>{{report.iloc[0][4]}}</th>
+            </tr>  
+            <tr>
+                <th>recall</th>
+                <th>{{report.iloc[1][0]}}</th>
+                <th>{{report.iloc[1][1]}}</th>
+                <th>{{report.iloc[1][2]}}</th>
+                <th>{{report.iloc[1][3]}}</th>
+                <th>{{report.iloc[1][4]}}</th>
+            </tr>   
+            <tr>
+                <th>f1-score</th>
+                <th>{{report.iloc[2][0]}}</th>
+                <th>{{report.iloc[2][1]}}</th>
+                <th>{{report.iloc[2][2]}}</th>
+                <th>{{report.iloc[2][3]}}</th>
+                <th>{{report.iloc[2][4]}}</th>
+            </tr>   
+            <tr>
+                <th>support</th>
+                <th>{{report.iloc[3][0]}}</th>
+                <th>{{report.iloc[3][1]}}</th>
+                <th>{{report.iloc[3][2]}}</th>
+                <th>{{report.iloc[3][3]}}</th>
+                <th>{{report.iloc[3][4]}}</th>
+            </tr>                                              
+        </table>
+        <p></p>
+        </center>
+        <h3 style="font-size:22px">
+            Analysis 
+        </h3>
+        <h4>
+            Precision Interpretation:
+            </h4>
+        <p style="font-size:18px">
+            As for our training data, the accuracy of the prediction model is <b>{{accuracy_trained}}</b>.<br>
+            As for our testing data, the accuracy of the prediction model is <b>{{accuracy_test}}</b>. <br>
+        </p>
+        <h4>
+            Confusion Matrix Interpretation:
+            </h4>
+        <p style="font-size:18px">
+            As for training data, <br>
+            There are <b> {{ul_1}} </b> normal people correctly predicted as normal and there are <b> {{ur_1}} </b> noramal people incorrectly labeled as diabetes. <br>
+            There are <b> {{ll_1}} </b> diabetes incorrectly labeled as normal, and there are <b> {{lr_1}} </b> diabetes correctly labeled as diabetes. <br><br>
+            As for testing data, <br>
+            There are <b> {{ul}} </b> normal people correctly predicted as normal and there are <b> {{ur}} </b> noramal people incorrectly labeled as diabetes. <br>
+            There are <b> {{ll}} </b> diabetes incorrectly labeled as normal, and there are <b> {{lr}} </b> diabetes correctly labeled as diabetes. <br>
+        </p>
+       
+        <center>
+        <br><br>           
+        <a style="font-size:20px" href="http://127.0.0.1:5000/" target="_self">Return Home</a>
+    </center>
+    <hr>
+    <center>
+    <p>&copy; 2022 by Yining Chen</p>
+    </center>
+    </body>
+</html>

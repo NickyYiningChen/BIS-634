@@ -1,0 +1,196 @@
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Random Forest</title>
+    </head>  
+    <style>
+        body{background: url(../static/pics/bg.gif) no-repeat;background-size:cover;}
+    </style>   
+    <body>
+        <h1 style="text-align:center">
+            <br>
+            Diabetes Prediction: Random Forest Prediction Model</h1>
+        </h1>
+        <hr>
+        <h2>What is Random Forest? </h2>
+        <p style="font-size:20px">
+            <br>
+            Random forest classification is a machine learning technique that is used to predict a categorical outcome, such as whether a patient has a certain disease or not. It is based on the random forest algorithm, which is an ensemble learning method that combines the predictions of multiple decision trees to make a more accurate and stable prediction. <br><br>
+
+            In random forest classification, a large number of decision trees are trained on the training data using a random subset of the features and a random subset of the training data. The predictions of the individual trees are then combined using a majority vote, or by averaging the probabilities predicted by each tree. This process helps to reduce overfitting and improve the stability of the model. <br><br>
+            </p>
+            
+        <center>    
+            <a href="https://www.geeksforgeeks.org/random-forest-regression-in-python/">
+                Click 
+            </a> to learn how to implement Random Forest classifier using Python
+            <br><br>
+        <img src="static/pics/rf.gif" alt="rf" width="500" height="330" loop=infinite><br><br>
+        </center>
+        <h2>Random Forest Training Data Result:</h2>
+        <center>
+        <h3 style="font-size:22px">Confusion Matrix</h3>
+        <table border= "1" style="font-size:18px">
+            <tr>
+                <th></th>
+                <th>&emsp; &emsp; Normal &emsp; &emsp;</th>
+                <th>&emsp; &emsp; Diabetes &emsp; &emsp;</th>
+            </tr>
+            <tr>
+                <th>&emsp; &emsp; Normal &emsp; &emsp;</th>
+                <th>{{ul_1}}</th>
+                <th>{{ur_1}}</th>
+            </tr> 
+            <tr>
+                <th>Diabetes</th>
+                <th>{{ll_1}}</th>
+                <th>{{lr_1}}</th>
+            </tr> 
+        </table>
+        <h3 style="font-size:22px">Classification Report</h3>
+        <table border="1">
+            
+            <tr>
+                <th></th>
+                <th>&emsp; 0 &emsp;</th>
+                <th>&emsp; 1 &emsp;</th>
+                <th>&emsp; macro avg &emsp;</th>
+                <th>&emsp; micro avg &emsp;</th>
+                <th>&emsp; weighted avg &emsp;</th>
+            </tr>
+            <tr>
+                <th>&emsp; precision &emsp;</th>
+                <th>{{report_train.iloc[0][0]}}</th>
+                <th>{{report_train.iloc[0][1]}}</th>
+                <th>{{report_train.iloc[0][2]}}</th>
+                <th>{{report_train.iloc[0][3]}}</th>
+                <th>{{report_train.iloc[0][4]}}</th>
+            </tr>  
+            <tr>
+                <th>recall</th>
+                <th>{{report_train.iloc[1][0]}}</th>
+                <th>{{report_train.iloc[1][1]}}</th>
+                <th>{{report_train.iloc[1][2]}}</th>
+                <th>{{report_train.iloc[1][3]}}</th>
+                <th>{{report_train.iloc[1][4]}}</th>
+            </tr>   
+            <tr>
+                <th>f1-score</th>
+                <th>{{report_train.iloc[2][0]}}</th>
+                <th>{{report_train.iloc[2][1]}}</th>
+                <th>{{report_train.iloc[2][2]}}</th>
+                <th>{{report_train.iloc[2][3]}}</th>
+                <th>{{report_train.iloc[2][4]}}</th>
+            </tr>   
+            <tr>
+                <th>support</th>
+                <th>{{report_train.iloc[3][0]}}</th>
+                <th>{{report_train.iloc[3][1]}}</th>
+                <th>{{report_train.iloc[3][2]}}</th>
+                <th>{{report_train.iloc[3][3]}}</th>
+                <th>{{report_train.iloc[3][4]}}</th>
+            </tr>                                              
+        </table>
+        </center>
+
+        <h2>Random Forest Testing Data Result:</h2>
+        <center>
+        <h3 style="font-size:22px">Confusion Matrix</h3>
+        <table border= "1" style="font-size:18px">
+            <tr>
+                <th></th>
+                <th>&emsp; &emsp; Normal &emsp; &emsp;</th>
+                <th>&emsp; &emsp; Diabetes &emsp; &emsp;</th>
+            </tr>
+            <tr>
+                <th>&emsp; &emsp; Normal &emsp; &emsp;</th>
+                <th>{{ul}}</th>
+                <th>{{ur}}</th>
+            </tr> 
+            <tr>
+                <th>Diabetes</th>
+                <th>{{ll}}</th>
+                <th>{{lr}}</th>
+            </tr> 
+        </table>
+        <h3 style="font-size:22px">Classification Report</h3>
+        <table border="1">
+            <tr>
+                <th></th>
+                <th>&emsp; 0 &emsp;</th>
+                <th>&emsp; 1 &emsp;</th>
+                <th>&emsp; macro avg &emsp;</th>
+                <th>&emsp; micro avg &emsp;</th>
+                <th>&emsp; weighted avg &emsp;</th>
+            </tr>
+            <tr>
+                <th>&emsp; precision &emsp;</th>
+                <th>{{report.iloc[0][0]}}</th>
+                <th>{{report.iloc[0][1]}}</th>
+                <th>{{report.iloc[0][2]}}</th>
+                <th>{{report.iloc[0][3]}}</th>
+                <th>{{report.iloc[0][4]}}</th>
+            </tr>  
+            <tr>
+                <th>recall</th>
+                <th>{{report.iloc[1][0]}}</th>
+                <th>{{report.iloc[1][1]}}</th>
+                <th>{{report.iloc[1][2]}}</th>
+                <th>{{report.iloc[1][3]}}</th>
+                <th>{{report.iloc[1][4]}}</th>
+            </tr>   
+            <tr>
+                <th>f1-score</th>
+                <th>{{report.iloc[2][0]}}</th>
+                <th>{{report.iloc[2][1]}}</th>
+                <th>{{report.iloc[2][2]}}</th>
+                <th>{{report.iloc[2][3]}}</th>
+                <th>{{report.iloc[2][4]}}</th>
+            </tr>   
+            <tr>
+                <th>support</th>
+                <th>{{report.iloc[3][0]}}</th>
+                <th>{{report.iloc[3][1]}}</th>
+                <th>{{report.iloc[3][2]}}</th>
+                <th>{{report.iloc[3][3]}}</th>
+                <th>{{report.iloc[3][4]}}</th>
+            </tr>                                              
+        </table>
+        <p></p>
+        </center>
+        <h3 style="font-size:22px">
+            Analysis 
+        </h3>
+        <h4>
+            Precision Interpretation:
+            </h4>
+        <p style="font-size:18px">
+            As for our training data, the accuracy of the prediction model is <b>{{accuracy_trained}}</b>.<br>
+            As for our testing data, the accuracy of the prediction model is <b>{{accuracy_test}}</b>. <br>
+        </p>
+        <h4>
+            Confusion Matrix Interpretation:
+            </h4>
+        <p style="font-size:18px">
+            As for training data, <br>
+            There are <b> {{ul_1}} </b> normal people correctly predicted as normal and there are <b> {{ur_1}} </b> noramal people incorrectly labeled as diabetes. <br>
+            There are <b> {{ll_1}} </b> diabetes incorrectly labeled as normal, and there are <b> {{lr_1}} </b> diabetes correctly labeled as diabetes. <br><br>
+            As for testing data, <br>
+            There are <b> {{ul}} </b> normal people correctly predicted as normal and there are <b> {{ur}} </b> noramal people incorrectly labeled as diabetes. <br>
+            There are <b> {{ll}} </b> diabetes incorrectly labeled as normal, and there are <b> {{lr}} </b> diabetes correctly labeled as diabetes. <br>
+        </p>
+        </p>
+        <p>
+       
+            
+        <center>
+        <br><br>           
+        <a style="font-size:20px" href="http://127.0.0.1:5000/" target="_self">Return Home</a>
+    </center>
+    <hr>
+    <center>
+    <p>&copy; 2022 by Yining Chen</p>
+    </center>
+    </body>
+</html>
